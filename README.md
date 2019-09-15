@@ -1,11 +1,3 @@
-## Table of Contents
-
-<!-- toc -->
-- old toc 1
-- old toc 2
-- old toc 3
-<!-- tocstop -->
-
 ### a_pythonOnly_1stTrial:
 
 Only python file without using .kv file

@@ -1,8 +1,10 @@
-:toc: macro
-:toc-title:
-:toclevels: 99
+## Table of Contents
 
-toc::[]
+<!-- toc -->
+- old toc 1
+- old toc 2
+- old toc 3
+<!-- tocstop -->
 
 ### a_pythonOnly_1stTrial:
 

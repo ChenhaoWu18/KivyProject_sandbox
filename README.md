@@ -1,12 +1,12 @@
 KivyProject sandbox
 
-# a_pythonOnly_1stTrial:
+### a_pythonOnly_1stTrial:
 
 Only python file without using .kv file
 
 <img src='/a_pythonOnly_1stTrial/trial.png' height="15%" width="15%">
 
-# b_kvStyleequvilent:
+### b_kvStyleequvilent:
 
 using both .py and .kv files
 

@@ -1,9 +1,9 @@
-##### Table of Contents  
-[Headers](#headers)  
-[Emphasis](#emphasis)  
-...snip...    
+:toc: macro
+:toc-title:
+:toclevels: 99
 
-<a name="headers"/>
+toc::[]
+
 ### a_pythonOnly_1stTrial:
 
 Only python file without using .kv file

@@ -9,7 +9,7 @@ using both .py and .kv files
 <img src='/b_kvStyleequvilent/out.gif' height="20%" width="20%">
 
 #### c_dynamicStyle:
-how to interact with buttons in the GNI
+how to interact with buttons in the GUI
 
 <img src='/c_dynamicStyle/out.gif' height="20%" width="20%">
 

@@ -9,7 +9,8 @@ using both .py and .kv files
 <img src='/b_kvStyleequvilent/out.gif' height="20%" width="20%">
 
 #### c_dynamicStyle:
-how to interact with buttons in the GNI
-<img src='/c_dynamicStyle/gif.gif' height="20%" width="20%">
+how to interact with buttons in the GUI
+
+<img src='/c_dynamicStyle/out.gif' height="20%" width="20%">
 
 Simple sign up and login form with built-in functions to check whether a valid email address is used, pop-up features and dynamic button display features

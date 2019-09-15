@@ -1,6 +1,6 @@
 KivyProject sandbox
 
-<<TableOfContents>>
+<TableOfContents>
 
 ### a_pythonOnly_1stTrial:
 

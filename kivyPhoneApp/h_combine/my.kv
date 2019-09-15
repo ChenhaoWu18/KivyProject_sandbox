@@ -1,0 +1,190 @@
+<CreateAccountWindow>:
+    name: 'create'
+    
+    firstName : firstName
+    email: email
+    password: passw
+    
+    
+    FloatLayout:
+        cols: 1        
+        
+        FloatLayout:
+            size: root.width, root.height/2
+            
+            Label:
+                text: 'Create an Account'
+                color:1, 1, 0.15, 1
+                size_hint: 0.8, 0.2
+                pos_hint: {'x':0.1, 'top':1}
+                font_size: (root.width**2 + root.height**2) / 15**4
+                
+            Label:
+                size_hint: 0.5, 0.1
+                pos_hint: {'x':0.06, 'top':0.8}
+                text: 'First Name:'
+                color:1, 1, 0.1, 1
+                bold: True
+                font_size: (root.width**2 + root.height**2) / 17**4
+                
+            TextInput:
+                pos_hint: {'x':0.45, 'top':0.8}
+                size_hint: 0.4, 0.1
+                id: firstName
+                multiline: False
+                font_size: (root.width**2 + root.height**2) / 17**4
+                
+            Label:
+                size_hint: 0.5, 0.1
+                pos_hint: {'x':0.06, 'top':0.8-0.13}
+                text: 'Email:'
+                color:1, 1, 0.1, 1
+                bold: True
+                font_size: (root.width**2 + root.height**2) / 17**4
+                
+            TextInput:
+                pos_hint: {'x':0.45, 'top':0.8-0.13}
+                size_hint: 0.4, 0.1
+                id: email
+                multiline: False
+                font_size: (root.width**2 + root.height**2) / 17**4
+                
+            Label:
+                size_hint: 0.5, 0.1
+                pos_hint: {'x':0.06, 'top':0.8-0.13*2}
+                text: 'Password:'
+                color:1, 1, 0.1, 1
+                bold: True
+                font_size: (root.width**2 + root.height**2) / 17**4
+                
+            TextInput:
+                pos_hint: {'x':0.45, 'top':0.8-0.13*2}
+                size_hint: 0.4, 0.1
+                id: passw
+                multiline: False
+                password: True
+                font_size: (root.width**2 + root.height**2) / 17**4
+            
+        Button:
+            id: btn1
+            pos_hint: {'x':0.3, 'y': 0.25}
+            size_hint: 0.4, 0.1
+            text: 'Already have an Account? Log In' if btn1.state == 'normal' else 'Back to login page ^@^'
+            color:1, 1, 0.1, 1
+            font_size: (root.width**2 + root.height**2) / 18.5**4
+            on_release:
+                root.manager.transition.direction = 'right'
+                root.login()
+                
+        Button:
+            id: btn2
+            pos_hint: {'x':0.2, 'y': 0.05}
+            size_hint: 0.6, 0.15
+            
+            text: 'Submit' if btn2.state == 'normal' else 'Creating your account'
+            color:1, 1, 0, 1
+            bold: True
+            font_size: (root.width**2 + root.height**2) / 17**4
+            on_release:
+                root.manager.transition.direction = 'right'
+                root.submit()
+
+<LoginWindow>:
+    name: 'login'
+    email: email
+    password: password
+    
+    FloatLayout:
+        Label:
+            text: 'Email: '
+            color:1, 1, 0.1, 1
+            bold: True
+            font_size: (root.width**2 + root.height**2) / 16**4
+            pos_hint: {'x':0.12, 'y': 0.77}
+            size_hint: 0.35, 0.15
+            
+        TextInput:
+            id: email
+            font_size: (root.width**2 + root.height**2) / 16**4
+            multiline: False
+            pos_hint: {'x':0.4, 'y': 0.77}
+            size_hint: 0.4, 0.12
+        
+        Label:
+            text: 'Password: '
+            color:1, 1, 0.1, 1
+            bold: True
+            font_size: (root.width**2 + root.height**2) / 16**4
+            pos_hint: {'x':0.12, 'y': 0.6}
+            size_hint: 0.35, 0.15
+            
+        TextInput:
+            id: password
+            font_size: (root.width**2 + root.height**2) / 16**4
+            multiline: False
+            password: True
+            pos_hint: {'x':0.4, 'y': 0.6}
+            size_hint: 0.4, 0.11
+                
+        Button:
+            id: btn3
+            pos_hint: {'x':0.25, 'y':0.05}
+            size_hint: 0.5, 0.23
+            font_size: (root.width**2 + root.height**2) / 16**4
+            text: 'Login' if btn3.state == 'normal' else 'Opening....'
+            color:0.1, 1, 0, 1
+            bold: True
+            on_release:
+                root.manager.transition.direction = 'up'
+                root.loginBtn()
+                
+        Button:
+            id: btn4
+            size_hint: 0.45, 0.1
+            pos_hint: {'x':0.285, 'y':0.35}
+            text: "Don't have an Account? Create One" if btn4.state == 'normal' else 'Welcome!'
+            color:1, 1, 0.1, 1
+            font_size: (root.width**2 + root.height**2) / 18**4
+            on_release:
+                root.manager.transition.direction = 'left'
+                root.createBtn()
+        
+<MainWindow>:
+    n: n
+    email: email
+    createdDate: createdDate
+    
+    FloatLayout:
+        Label:
+            id: n
+            pos_hint: {'x':0.1, 'top':0.9}
+            size_hint: 0.8, 0.2
+            text: 'Account Name'
+            font_size: (root.width**2 + root.height**2) / 18**4
+            
+        Label:
+            id: email
+            pos_hint: {'x':0.1, 'top':0.7}
+            size_hint: 0.8, 0.2
+            text: 'Email'
+            ont_size: (root.width**2 + root.height**2) / 18**4
+            
+        Label:
+            id: createdDate 
+            pos_hint: {'x':0.1, 'top':0.5}
+            size_hint: 0.8, 0.2
+            text: 'Created Date'
+            ont_size: (root.width**2 + root.height**2) / 18**4
+            
+        Button:
+            id: btn5
+            pos_hint: {'x':0.2, 'y':0.1}
+            size_hint: 0.6, 0.2
+            text: 'Log Out' if btn5.state == 'normal' else 'Bye ^@^'
+            color:0.1, 1, 0.1, 1
+            bold:True
+            ont_size: (root.width**2 + root.height**2) / 8**4
+            on_release:
+                app.root.current = 'login'
+                root.manager.transition.direction = 'down'
+                

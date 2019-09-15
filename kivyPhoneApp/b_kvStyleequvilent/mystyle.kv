@@ -1,0 +1,47 @@
+<MyGrid>
+    
+    firstName: firstName
+    lastName: lastName
+    email: email
+    btn: btn
+    
+    GridLayout:
+        cols: 1
+        size: root.width-200, root.height-200
+        pos: 100,100
+        
+        GridLayout:
+            cols: 2
+            size: root.width-400, root.height-400
+            pos: 200,200
+        
+            Label:
+                text: "First Name: "
+            TextInput:
+                id: firstName
+                multiline: False
+                
+            Label:
+                text: "Last Name: "
+            TextInput:
+                id: lastName
+                multiline: False
+            
+            Label:
+                text: "Email: "
+            TextInput:
+                id: email
+                multiline: False
+        
+        Button:
+            id: btn
+            font_size:40
+            size_hint: 0.3, 0.5
+            
+            text: "Submit" if btn.state == 'normal' else 'Happy ^@^'
+            color: 1, 1, 0, 1
+            bold: True
+            
+            backgrand_color:0.3, 0.6, 0.7, 1
+            on_press: root.pressed()
+         

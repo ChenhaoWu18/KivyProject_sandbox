@@ -1,0 +1,76 @@
+WindowManager:
+    MainWindow:
+    SecionWindow:
+    ThirdWindow:
+    
+
+<Button>:
+    font_size:60
+    color: 0.3, 0.6, 0.7, 1
+    
+    background_color: 0.3, 0.6, 0.7, 1
+    
+    
+<MainWindow>:
+    name: 'main'
+    
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols:2
+            
+            Label:
+                text:'Jason Loves: '
+                color: 1, 1, 0, 1 
+                background_color: 0, 0, 0, 1
+                font_size:60
+                
+               
+            TextInput:
+                id: passw
+                multiline: False
+        
+        Button:
+            id : btn
+            text: 'Submit' if btn.state == 'normal' else 'checking...'
+            font_size:40
+            bold: True
+            size_hint: 0.3, 0.5
+            on_release: 
+                app.root.current = 'second' if passw.text == 'Chenhao' else 'third'
+                root.manager.transition.direction = 'left'
+                passw.text = ''
+        
+    
+<SecionWindow>:
+    name: 'second'
+    
+    Button:
+        text: "May your life be full of joy and happiness!".title() 
+        bold: True
+        color: 1, 1, 0, 1 
+        background_color: 0.2, 1, 1, 1
+        on_release: 
+            app.root.current = 'main' 
+            root.manager.transition.direction = 'right'
+
+<ThirdWindow>:
+    name: 'third'
+    
+    Button:
+        text: "wrong answer ! ! !  >_>  ".upper() 
+        bold: True
+        color: 1, 0, 0, 1
+        background_color: 0.3, 0.4, 0.5, 1
+        on_release: 
+            app.root.current = 'main' 
+            root.manager.transition.direction = 'right'
+
+    
+
+        
+    
+        
+        
+         

@@ -1,0 +1,22 @@
+<Button>:
+    font_size:40
+    color:0.3, 0.6, 0.7, 1
+    size_hint: 0.3, 0.5
+
+
+<FloatLayout>:     
+    Button:
+        pos_hint: {'x':0.6, 'y':0.3 }
+        text: "Hello Jason" if pressed.state == 'normal' else 'Unhappy -_-'
+        color: 0, 0, 1, 1
+        background_color: 0.3, 0.4, 0.5, 1
+        
+    Button:
+        id: pressed
+        pos_hint: {'x':0.1, 'y':0.3 }
+        text: "Hello Chenhao" if pressed.state == 'normal' else 'Happy ^@^'
+        color: 1, 1, 0, 1
+        background_color: 0.3, 0.4, 0.5, 1
+        
+        
+         

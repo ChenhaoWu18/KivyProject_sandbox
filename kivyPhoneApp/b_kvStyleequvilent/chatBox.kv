@@ -1,0 +1,113 @@
+<connectPage>
+    
+    firstName: firstName
+    lastName: lastName
+    email: email
+    btn: btn
+    
+    GridLayout:
+        cols: 1
+        size: root.width-200, root.height-200
+        pos: 100,100
+        
+        GridLayout:
+            cols: 2
+            size: root.width-400, root.height-400
+            pos: 200,200
+        
+            Label:
+                text: "First Name: "
+            TextInput:
+                id: firstName
+                multiline: False
+                
+            Label:
+                text: "Last Name: "
+            TextInput:
+                id: lastName
+                multiline: False
+            
+            Label:
+                text: "Email: "
+            TextInput:
+                id: email
+                multiline: False
+        
+        Button:
+            id: btn
+            font_size:40
+            size_hint: 0.3, 0.5
+            
+            text: "Submit" if btn.state == 'normal' else 'Happy ^@^'
+            color: 1, 1, 0, 1
+            bold: True
+            
+            backgrand_color:0.3, 0.6, 0.7, 1
+            on_press: root.pressed()
+            
+<infoPage>
+
+    message: message
+
+    GridLayout:
+        cols: 1
+        
+        size: root.width-200, root.height-200
+        pos: 100,100
+        
+        Label:
+            id:message
+            pos_hint: {'x':0.1, 'top':0.9}
+            size_hint: 0.8, 0.2
+            font_size: (root.width**2 + root.height**2) / 18**4
+            
+<ChatPage>
+
+    GridLayout:
+        rows: 2
+        cols: 2
+        size: root.width-200, root.height-200
+        size_hint_y: None
+        pos: 100,100
+        
+        Label:
+            id: history
+            text: 'history of the chat'
+       
+        Label:
+            id:2
+            text:'leave blank'
+            
+        TextInput:
+            id: new_message
+            multiline: False
+        
+        Button:
+            id: btn
+            text: 'send'
+            on_press: root.send_message()
+        
+<ScrollabelLabel> 
+    chat_history: chat_history
+    scroll_to_point: scroll_to_point
+    
+    GridLayout:
+        cols: 1
+        size_hint_y: None
+        height: chat_history.texture_size[1]+15
+        scroll_to: scroll_to_point
+        
+        Label:
+            id: chat_history
+            size_hint_y: None
+            markup:True
+            height: chat_history.texture_size[1]
+            text_size: chat_history.width*0.98
+
+        Label:
+            id: scroll_to_point
+        
+        Window:
+            on_key_down:
+                
+    
